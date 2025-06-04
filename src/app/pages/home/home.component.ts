@@ -10,5 +10,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+  email: string = '';
+  password: string = '';
 }
