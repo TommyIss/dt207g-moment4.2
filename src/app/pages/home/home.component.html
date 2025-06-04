@@ -10,7 +10,12 @@
     <br>
     <input type="text" id="password" [(ngModel)]="password">
     <br>
-    <button>Logga in</button>
+    <button (click)="logIn()">Logga in</button>
     <p>Har du inget konto? Du kan registrera dig <a routerLink="/register">här</a></p>
 </div>
+
+<!-- Felmeddalande -->
+@if(error !== '') {
+    <p style="color: red;">{{ error }}</p>
+}
 

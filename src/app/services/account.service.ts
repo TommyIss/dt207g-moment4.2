@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, Observable } from 'rxjs';
 import { AccountRegister } from '../models/account-register';
 import { AccountLogin } from '../models/account-login';
+import { LoginResponse } from '../models/login-response';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class AccountService {
   }
 
   // Inloggning
-  userLogin(accountLogin: AccountLogin): Observable<AccountLogin> {
-    return this.http.post<AccountLogin>(`${this.url}/login`, accountLogin)
+  userLogin(accountLogin: AccountLogin): Observable<LoginResponse> {
+    return this.http.post<LoginResponse>(`${this.url}/login`, accountLogin)
   }
 }
