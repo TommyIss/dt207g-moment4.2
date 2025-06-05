@@ -50,4 +50,8 @@ export class AccountComponent {
           this.isVisable = 'none';
         }
   }
+  logOut() {
+    localStorage.removeItem('authtoken');
+    this.router.navigate(['/']);
+  }
 }

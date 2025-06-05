@@ -3,6 +3,7 @@
 <h3>Valkommen {{ protectedData.result.username }}</h3>
 
 <button (click)="getProtectedData()">Visa Skyddade data</button>
+<button (click)="logOut()" id="logOutBtn">Logga ut</button>
 
 <ul [style.display]="isVisable">
     <li>AnvändarId: {{ protectedData.result._id }}</li>
