@@ -21,6 +21,9 @@ export class RegisterComponent {
   constructor(private accountService: AccountService, router: Router) {}
 
   createAccount() {
+    this.error = '';
+    this.confirmMessage = '';
+    
     let newAccount: AccountRegister = {
       username: this.username,
       email: this.email,
@@ -30,9 +33,11 @@ export class RegisterComponent {
     this.accountService.userRegister(newAccount).subscribe({
       next: response => {
         console.log(response);
+        this.error = '';
         this.confirmMessage = 'Kontot har skapats';
       },
       error: err => {
+        this.confirmMessage = '';
         this.error = err.error.error;
       }
     });

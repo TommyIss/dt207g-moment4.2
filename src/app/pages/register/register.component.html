@@ -20,7 +20,9 @@
 <!-- Felmeddalande -->
 @if(error !== '') {
     <p style="color: red;">{{ error }}</p>
-} @else if(confirmMessage !== '') {
+} 
+
+@if(confirmMessage !== '' && error === '') {
     <p style="color: green;">{{ confirmMessage }}</p>
 }
 
