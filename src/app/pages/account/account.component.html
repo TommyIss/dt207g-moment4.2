@@ -1,1 +1,12 @@
-<p>account works!</p>
+<h2>Användarsida</h2>
+
+<h3>Valkommen {{ protectedData.result.username }}</h3>
+
+<button (click)="getProtectedData()">Visa Skyddade data</button>
+
+<ul [style.display]="isVisable">
+    <li>AnvändarId: {{ protectedData.result._id }}</li>
+    <li>Användarnamn: {{ protectedData.result.username }}</li>
+    <li>E-post: {{ protectedData.result.email }}</li>
+    <li>Skapat: {{ protectedData.result.created }}</li>
+</ul>

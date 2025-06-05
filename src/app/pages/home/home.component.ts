@@ -26,9 +26,9 @@ export class HomeComponent {
 
     this.accountService.userLogin(inLogedAccount).subscribe({
       next: (response) => {
-        console.log(response.response.token);
         let token = response.response.token;
         localStorage.setItem('authtoken', token);
+        this.router.navigate(['account/' + inLogedAccount.email]);
       },
       error: err => {
         this.error = err.error.error;
